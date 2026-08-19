@@ -1,0 +1,120 @@
+package com.foodcal.foodcal_backend.entity;
+
+import java.sql.Date;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+@Entity
+@Table(name = "user_details")
+public class UserDetail {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+    @Column(name = "user_name")
+    private String userName;
+    @Column(name = "full_name")
+    private String fullName;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "gender")
+    private String gender;
+    @Column(name = "avatar_url")
+    private String avatarUrl;
+    @Column(name = "role")
+    private String role;
+    @Column(name = "created_at")
+    private Date createdAt;
+    @Column(name = "updated_at")
+    private Date updatedAt;
+
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
+    private FitnessDetail fitness;
+
+    public FitnessDetail getFitness() {
+        return fitness;
+    }
+
+    public void setFitness(FitnessDetail fitness) {
+        this.fitness = fitness;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+}
