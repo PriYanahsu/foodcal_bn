@@ -38,6 +38,9 @@ public class UserDetail {
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
     private FitnessDetail fitness;
 
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<FoodLog> foodLogs;
+
     public FitnessDetail getFitness() {
         return fitness;
     }
