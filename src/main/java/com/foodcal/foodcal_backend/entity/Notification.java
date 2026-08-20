@@ -6,7 +6,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
-import java.security.Timestamp;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.ManyToOne;
@@ -16,9 +17,9 @@ import jakarta.persistence.JoinColumn;
 @Table(name = "Notification")
 public class Notification {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id")
-    private Long id;
+    private UUID id;
 
     @ManyToOne
     @JoinColumn(name = "user_id" , nullable = false)
@@ -35,9 +36,9 @@ public class Notification {
     @Column(name = "meta_data")
     private String metaData;
     @Column(name = "created_at")
-    private Timestamp createdAt;
+    private LocalDateTime createdAt;
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
     public UserDetail getUser() {
@@ -58,10 +59,10 @@ public class Notification {
     public String getMetaData() {
         return metaData;
     }
-    public Timestamp getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
     public void setUser(UserDetail user) {
@@ -82,7 +83,7 @@ public class Notification {
     public void setMetaData(String metaData) {
         this.metaData = metaData;
     }
-    public void setCreatedAt(Timestamp createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 }

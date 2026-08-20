@@ -2,6 +2,10 @@ package com.foodcal.foodcal_backend.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.UUID;
+
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,9 +22,9 @@ import jakarta.persistence.Table;
 public class FitnessDetail {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id")
-    private Long id;
+    private UUID id;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = false, unique = true)
@@ -46,14 +50,15 @@ public class FitnessDetail {
     private BigDecimal dailyCarbsTargetG;
     @Column(name = "daily_fat_target_g", nullable = false)
     private BigDecimal dailyFatTargetG;
+    @JdbcTypeCode(SqlTypes.LONG32VARCHAR)
     @Column(name = "ai_coach_advice", nullable = false)
     private String aiCoachAdvice;
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

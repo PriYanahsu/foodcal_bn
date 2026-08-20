@@ -1,7 +1,8 @@
 package com.foodcal.foodcal_backend.entity;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,9 +18,9 @@ import jakarta.persistence.GenerationType;
 @Table(name = "user_details")
 public class UserDetail {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id")
-    private Long id;
+    private UUID id;
     @Column(name = "user_name")
     private String userName;
     @Column(name = "full_name")
@@ -33,9 +34,9 @@ public class UserDetail {
     @Column(name = "role")
     private String role;
     @Column(name = "created_at")
-    private Date createdAt;
+    private LocalDateTime createdAt;
     @Column(name = "updated_at")
-    private Date updatedAt;
+    private LocalDateTime updatedAt;
 
     @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
     private FitnessDetail fitness;
@@ -57,7 +58,7 @@ public class UserDetail {
         this.fitness = fitness;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
@@ -85,15 +86,15 @@ public class UserDetail {
         return role;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
@@ -121,11 +122,11 @@ public class UserDetail {
         this.role = role;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

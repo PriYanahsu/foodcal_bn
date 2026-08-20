@@ -1,0 +1,3 @@
+ALTER TABLE user_details
+    ALTER COLUMN created_at TYPE TIMESTAMP,
+    ALTER COLUMN updated_at TYPE TIMESTAMP;

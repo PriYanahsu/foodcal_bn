@@ -1,7 +1,8 @@
 package com.foodcal.foodcal_backend.entity;
 
-import java.security.Timestamp;
 import java.sql.Date;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,9 +18,9 @@ import jakarta.persistence.Table;
 public class Subscription {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id")
-    private Long id;
+    private UUID id;
     
     @ManyToOne
     @JoinColumn(name = "user_id" , nullable = false)
@@ -38,11 +39,11 @@ public class Subscription {
     @Column(name = "payment_subscription_id")
     private String paymentSubscriptionId;
     @Column(name = "created_at")
-    private Timestamp createdAt;
+    private LocalDateTime createdAt;
     @Column(name = "updated_at")
-    private Timestamp updatedAt;
+    private LocalDateTime updatedAt;
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
     public UserDetail getUser() {
@@ -67,13 +68,13 @@ public class Subscription {
     public String getPaymentSubscriptionId() {
         return paymentSubscriptionId;
     }
-    public Timestamp getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
-    }   
-    public Timestamp getUpdatedAt() {
+    }
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
     public void setUser(UserDetail user) {
@@ -97,10 +98,10 @@ public class Subscription {
     public void setPaymentSubscriptionId(String paymentSubscriptionId) {
         this.paymentSubscriptionId = paymentSubscriptionId;
     }
-    public void setCreatedAt(Timestamp createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
-    public void setUpdatedAt(Timestamp updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

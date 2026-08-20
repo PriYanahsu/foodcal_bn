@@ -1,6 +1,7 @@
 package com.foodcal.foodcal_backend.entity;
 
-import java.security.Timestamp;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,8 +17,8 @@ import jakarta.persistence.Table;
 public class FoodLog {
 
     @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "id")private UUID id;
 
     @ManyToOne
     @JoinColumn(name = "user_id" , nullable = false)
@@ -42,10 +43,10 @@ public class FoodLog {
     @Column(name = "is_manual")
     private Boolean isManual;
     @Column(name = "created_at")
-    private Timestamp createdAt;
+    private LocalDateTime createdAt;
     
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
     public UserDetail getUser() {
@@ -78,10 +79,10 @@ public class FoodLog {
     public Boolean getIsManual() {
         return isManual;
     }
-    public Timestamp getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
     public void setUser(UserDetail user) {
@@ -116,7 +117,7 @@ public class FoodLog {
     public void setIsManual(Boolean isManual) {
         this.isManual = isManual;
     }
-    public void setCreatedAt(Timestamp createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 }
