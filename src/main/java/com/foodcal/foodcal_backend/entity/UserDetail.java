@@ -44,7 +44,7 @@ public class UserDetail {
     private List<FoodLog> foodLogs;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private List<Notification> notifications;
+    private List<Subscription> subscriptions;
 
     public FitnessDetail getFitness() {
         return fitness;
