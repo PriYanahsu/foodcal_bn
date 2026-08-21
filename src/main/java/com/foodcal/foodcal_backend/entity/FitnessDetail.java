@@ -1,21 +1,19 @@
 package com.foodcal.foodcal_backend.entity;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.UUID;
-
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.SqlTypes;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.UUID;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 @Entity
 @Table(name = "fitness_details")
@@ -32,24 +30,34 @@ public class FitnessDetail {
 
     @Column(name = "age", nullable = false)
     private int age;
+
     @Column(name = "height", nullable = false)
     private BigDecimal height;
+
     @Column(name = "weight", nullable = false)
     private BigDecimal weight;
+
     @Column(name = "activity_level", nullable = false)
     private String activityLevel;
+
     @Column(name = "target_weight_kg", nullable = false)
     private BigDecimal targetWeightKg;
+
     @Column(name = "target_date", nullable = false)
     private LocalDate targetDate;
+
     @Column(name = "daily_calorie_target", nullable = false)
     private int dailyCalorieTarget;
+
     @Column(name = "daily_protein_target_g", nullable = false)
     private BigDecimal dailyProteinTargetG;
+
     @Column(name = "daily_carbs_target_g", nullable = false)
     private BigDecimal dailyCarbsTargetG;
+
     @Column(name = "daily_fat_target_g", nullable = false)
     private BigDecimal dailyFatTargetG;
+
     @JdbcTypeCode(SqlTypes.LONG32VARCHAR)
     @Column(name = "ai_coach_advice", nullable = false)
     private String aiCoachAdvice;
