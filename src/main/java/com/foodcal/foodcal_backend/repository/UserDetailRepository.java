@@ -9,4 +9,6 @@ public interface UserDetailRepository extends JpaRepository<UserDetail, UUID> {
     boolean existsByEmailIgnoreCase(String email);
 
     boolean existsByUserNameIgnoreCase(String userName);
+
+    UserDetail findByEmailIgnoreCase(String email);
 }

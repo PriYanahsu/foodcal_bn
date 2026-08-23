@@ -24,4 +24,9 @@ public class Auth {
     public ResponseEntity<AuthResponse> signup(@RequestBody SignupRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(authService.signup(request));
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
+        return ResponseEntity.status(HttpStatus.OK).body(authService.login(request));
+    }
 }
