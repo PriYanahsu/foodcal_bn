@@ -1,5 +1,6 @@
 package com.foodcal.foodcal_backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -8,6 +9,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -22,14 +25,18 @@ public class UserDetail {
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "user_name")
+    @Column(name = "user_name", nullable = false)
     private String userName;
 
     @Column(name = "full_name")
     private String fullName;
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false)
     private String email;
+
+    @JsonIgnore
+    @Column(name = "password_hash", nullable = false)
+    private String passwordHash;
 
     @Column(name = "gender")
     private String gender;
@@ -82,6 +89,10 @@ public class UserDetail {
         return email;
     }
 
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
     public String getGender() {
         return gender;
     }
@@ -118,6 +129,10 @@ public class UserDetail {
         this.email = email;
     }
 
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
     public void setGender(String gender) {
         this.gender = gender;
     }
@@ -136,5 +151,17 @@ public class UserDetail {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    @PrePersist
+    void onCreate() {
+        LocalDateTime now = LocalDateTime.now();
+        createdAt = now;
+        updatedAt = now;
+    }
+
+    @PreUpdate
+    void onUpdate() {
+        updatedAt = LocalDateTime.now();
     }
 }
