@@ -3,6 +3,8 @@ package com.foodcal.foodcal_backend.service;
 import com.foodcal.foodcal_backend.dto.AuthResponse;
 import com.foodcal.foodcal_backend.dto.SignupRequest;
 import com.foodcal.foodcal_backend.dto.UserResponse;
+import com.foodcal.foodcal_backend.dto.LoginRequest;
+
 import com.foodcal.foodcal_backend.entity.UserDetail;
 import com.foodcal.foodcal_backend.exception.DuplicateResourceException;
 import com.foodcal.foodcal_backend.exception.InvalidRequestException;
@@ -55,7 +57,6 @@ public class AuthService {
         user.setFullName(request.getFullName().trim());
         user.setEmail(email);
         user.setGender(trimToNull(request.getGender()));
-        user.setAvatarUrl(trimToNull(request.getAvatarUrl()));
         user.setRole(DEFAULT_ROLE);
         user.setPasswordHash(passwordEncoder.encode(request.getPassword()));
 
@@ -106,7 +107,6 @@ public class AuthService {
         response.setFullName(user.getFullName());
         response.setEmail(user.getEmail());
         response.setGender(user.getGender());
-        response.setAvatarUrl(user.getAvatarUrl());
         response.setRole(user.getRole());
         return response;
     }
@@ -145,4 +145,6 @@ public class AuthService {
         response.setAccessToken(jwtUtil.createAccessToken(principal));
         response.setUser(toUserResponse(user));
         return response;
+
+    }
 }
