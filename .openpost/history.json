@@ -1,0 +1,956 @@
+[
+  {
+    "id": "1787506387235",
+    "timestamp": 1787506387235,
+    "request": {
+      "id": "1787506387100",
+      "name": "New Request",
+      "method": "POST",
+      "url": "http://localhost:800/api/v1/signup",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"test1\",\n  \"fullname\": \"test\",\n  \"email\": \"test@gmai.com\"\n  \"gender\": \"male\"\n  \"password\": \"test@123\"\n}"
+      },
+      "auth": {
+        "type": "none"
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 0,
+      "statusText": "Error",
+      "headers": {},
+      "body": "Request failed: fetch failed",
+      "time": 110,
+      "size": 0,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787506431161",
+    "timestamp": 1787506431161,
+    "request": {
+      "id": "1787506431053",
+      "name": "New Request",
+      "method": "POST",
+      "url": "http://localhost:800/api/v1/signup",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"test1\",\n  \"fullname\": \"test\",\n  \"email\": \"test@gmai.com\",\n  \"gender\": \"male\",\n  \"password\": \"test@123\"\n}"
+      },
+      "auth": {
+        "type": "none"
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 0,
+      "statusText": "Error",
+      "headers": {},
+      "body": "Request failed: fetch failed",
+      "time": 106,
+      "size": 0,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787506442344",
+    "timestamp": 1787506442344,
+    "request": {
+      "id": "1787506442329",
+      "name": "New Request",
+      "method": "POST",
+      "url": "http://localhost:8000/api/v1/signup",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"test1\",\n  \"fullname\": \"test\",\n  \"email\": \"test@gmai.com\",\n  \"gender\": \"male\",\n  \"password\": \"test@123\"\n}"
+      },
+      "auth": {
+        "type": "none"
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 0,
+      "statusText": "Error",
+      "headers": {},
+      "body": "Request failed: fetch failed",
+      "time": 7,
+      "size": 0,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787506497619",
+    "timestamp": 1787506497619,
+    "request": {
+      "id": "1787506497585",
+      "name": "New Request",
+      "method": "POST",
+      "url": "http://localhost:8000/api/v1/auth/signup",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"test1\",\n  \"fullname\": \"test\",\n  \"email\": \"test@gmai.com\",\n  \"gender\": \"male\",\n  \"password\": \"test@123\"\n}"
+      },
+      "auth": {
+        "type": "none"
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 0,
+      "statusText": "Error",
+      "headers": {},
+      "body": "Request failed: fetch failed",
+      "time": 30,
+      "size": 0,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787506506742",
+    "timestamp": 1787506506742,
+    "request": {
+      "id": "1787506506733",
+      "name": "New Request",
+      "method": "POST",
+      "url": "http://localhost:8000/api/v1/auth/signup",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"test1\",\n  \"fullname\": \"test\",\n  \"email\": \"test@gmai.com\",\n  \"gender\": \"male\",\n  \"password\": \"test@123\"\n}"
+      },
+      "auth": {
+        "type": "none"
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 0,
+      "statusText": "Error",
+      "headers": {},
+      "body": "Request failed: fetch failed",
+      "time": 7,
+      "size": 0,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787506530770",
+    "timestamp": 1787506530770,
+    "request": {
+      "id": "1787506529494",
+      "name": "New Request",
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/auth/signup",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"test1\",\n  \"fullname\": \"test\",\n  \"email\": \"test@gmai.com\",\n  \"gender\": \"male\",\n  \"password\": \"test@123\"\n}"
+      },
+      "auth": {
+        "type": "none"
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 400,
+      "statusText": "",
+      "headers": {
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "connection": "close",
+        "content-type": "application/json",
+        "date": "Sun, 23 Aug 2026 17:35:30 GMT",
+        "expires": "0",
+        "pragma": "no-cache",
+        "transfer-encoding": "chunked",
+        "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0"
+      },
+      "body": "{\"message\":\"Username must be at least 3 characters\"}",
+      "time": 1270,
+      "size": 52,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787506595140",
+    "timestamp": 1787506595140,
+    "request": {
+      "id": "1787506595093",
+      "name": "New Request",
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/auth/signup",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"username\": \"test1\",\n  \"fullname\": \"test\",\n  \"email\": \"test@gmai.com\",\n  \"gender\": \"male\",\n  \"password\": \"test@123\"\n}"
+      },
+      "auth": {
+        "type": "none"
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 400,
+      "statusText": "",
+      "headers": {
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "connection": "close",
+        "content-type": "application/json",
+        "date": "Sun, 23 Aug 2026 17:36:35 GMT",
+        "expires": "0",
+        "pragma": "no-cache",
+        "transfer-encoding": "chunked",
+        "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0"
+      },
+      "body": "{\"message\":\"Username must be at least 3 characters\"}",
+      "time": 41,
+      "size": 52,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787506676604",
+    "timestamp": 1787506676604,
+    "request": {
+      "id": "1787506675508",
+      "name": "New Request",
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/auth/signup",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"userName\": \"test1\",\n  \"fullName\": \"test\",\n  \"email\": \"test@gmai.com\",\n  \"gender\": \"male\",\n  \"password\": \"test@123\"\n}"
+      },
+      "auth": {
+        "type": "none"
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 201,
+      "statusText": "",
+      "headers": {
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "connection": "keep-alive",
+        "content-type": "application/json",
+        "date": "Sun, 23 Aug 2026 17:37:56 GMT",
+        "expires": "0",
+        "keep-alive": "timeout=60",
+        "pragma": "no-cache",
+        "transfer-encoding": "chunked",
+        "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0"
+      },
+      "body": "{\"accessToken\":\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNjY3NiwiZXhwIjoxNzg3NTkzMDc2fQ.ZMca87BL6sDyAJb3HXHh_5a-8Nrgjs56Sf0aZxOevYI\",\"tokenType\":\"Bearer\",\"user\":{\"avatarUrl\":null,\"email\":\"test@gmai.com\",\"fullName\":\"test\",\"gender\":\"male\",\"id\":\"dbf0bb54-a680-478b-81b9-0f01476d69d2\",\"role\":\"USER\",\"userName\":\"test1\"}}",
+      "time": 1088,
+      "size": 507,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787507068334",
+    "timestamp": 1787507068334,
+    "request": {
+      "id": "1787507067589",
+      "name": "New Request",
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/auth/login",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNjY3NiwiZXhwIjoxNzg3NTkzMDc2fQ.ZMca87BL6sDyAJb3HXHh_5a-8Nrgjs56Sf0aZxOevYI",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"test@gmail.com\",\n  \"password\": \"test@123\"\n}"
+      },
+      "auth": {
+        "type": "none"
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 400,
+      "statusText": "",
+      "headers": {
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "connection": "close",
+        "content-type": "application/json",
+        "date": "Sun, 23 Aug 2026 17:44:28 GMT",
+        "expires": "0",
+        "pragma": "no-cache",
+        "transfer-encoding": "chunked",
+        "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0"
+      },
+      "body": "{\"message\":\"Invalid email or password\"}",
+      "time": 721,
+      "size": 39,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787507092088",
+    "timestamp": 1787507092088,
+    "request": {
+      "id": "1787507091927",
+      "name": "New Request",
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/auth/login",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNjY3NiwiZXhwIjoxNzg3NTkzMDc2fQ.ZMca87BL6sDyAJb3HXHh_5a-8Nrgjs56Sf0aZxOevYI",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"test@gmai.com\",\n  \"password\": \"test@123\"\n}"
+      },
+      "auth": {
+        "type": "none"
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "connection": "keep-alive",
+        "content-type": "application/json",
+        "date": "Sun, 23 Aug 2026 17:44:52 GMT",
+        "expires": "0",
+        "keep-alive": "timeout=60",
+        "pragma": "no-cache",
+        "transfer-encoding": "chunked",
+        "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0"
+      },
+      "body": "{\"accessToken\":\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsMrk\",\"tokenType\":\"Bearer\",\"user\":{\"avatarUrl\":null,\"email\":\"test@gmai.com\",\"fullName\":\"test\",\"gender\":\"male\",\"id\":\"dbf0bb54-a680-478b-81b9-0f01476d69d2\",\"role\":\"USER\",\"userName\":\"test1\"}}",
+      "time": 158,
+      "size": 507,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787507523692",
+    "timestamp": 1787507523692,
+    "request": {
+      "id": "1787507523679",
+      "name": "New Request",
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/auth/test",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsMrk",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "json"
+      },
+      "auth": {
+        "type": "none"
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 0,
+      "statusText": "Error",
+      "headers": {},
+      "body": "Request failed: Request with GET/HEAD method cannot have body.",
+      "time": 9,
+      "size": 0,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787507566627",
+    "timestamp": 1787507566627,
+    "request": {
+      "id": "1787507566316",
+      "name": "New Request",
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/auth/test",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsMrk",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "none"
+      },
+      "auth": {
+        "type": "none"
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 403,
+      "statusText": "",
+      "headers": {
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "connection": "keep-alive",
+        "content-length": "0",
+        "date": "Sun, 23 Aug 2026 17:52:46 GMT",
+        "expires": "0",
+        "keep-alive": "timeout=60",
+        "pragma": "no-cache",
+        "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0"
+      },
+      "body": "",
+      "time": 308,
+      "size": 0,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787507611506",
+    "timestamp": 1787507611506,
+    "request": {
+      "id": "1787507611403",
+      "name": "New Request",
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/auth/test",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsMrk",
+          "enabled": true
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsMrk",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "none"
+      },
+      "auth": {
+        "type": "bearer",
+        "bearer": {
+          "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsMrk"
+        }
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 403,
+      "statusText": "",
+      "headers": {
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "connection": "keep-alive",
+        "content-length": "0",
+        "date": "Sun, 23 Aug 2026 17:53:31 GMT",
+        "expires": "0",
+        "keep-alive": "timeout=60",
+        "pragma": "no-cache",
+        "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0"
+      },
+      "body": "",
+      "time": 95,
+      "size": 0,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787507620399",
+    "timestamp": 1787507620399,
+    "request": {
+      "id": "1787507620369",
+      "name": "New Request",
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/auth/test",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsMrk",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "none"
+      },
+      "auth": {
+        "type": "bearer",
+        "bearer": {
+          "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsMrk"
+        }
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 403,
+      "statusText": "",
+      "headers": {
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "connection": "keep-alive",
+        "content-length": "0",
+        "date": "Sun, 23 Aug 2026 17:53:40 GMT",
+        "expires": "0",
+        "keep-alive": "timeout=60",
+        "pragma": "no-cache",
+        "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0"
+      },
+      "body": "",
+      "time": 26,
+      "size": 0,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787507689860",
+    "timestamp": 1787507689860,
+    "request": {
+      "id": "1787507689674",
+      "name": "New Request",
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/auth/test",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsMrk",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "none"
+      },
+      "auth": {
+        "type": "bearer",
+        "bearer": {
+          "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsMrk"
+        }
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "connection": "keep-alive",
+        "content-length": "11",
+        "content-type": "application/json",
+        "date": "Sun, 23 Aug 2026 17:54:49 GMT",
+        "expires": "0",
+        "keep-alive": "timeout=60",
+        "pragma": "no-cache",
+        "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0"
+      },
+      "body": "Hello World",
+      "time": 181,
+      "size": 11,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787507697156",
+    "timestamp": 1787507697156,
+    "request": {
+      "id": "1787507697121",
+      "name": "New Request",
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/auth/test",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsM",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "none"
+      },
+      "auth": {
+        "type": "bearer",
+        "bearer": {
+          "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsM"
+        }
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 403,
+      "statusText": "",
+      "headers": {
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "connection": "keep-alive",
+        "content-length": "0",
+        "date": "Sun, 23 Aug 2026 17:54:57 GMT",
+        "expires": "0",
+        "keep-alive": "timeout=60",
+        "pragma": "no-cache",
+        "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0"
+      },
+      "body": "",
+      "time": 33,
+      "size": 0,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787507704770",
+    "timestamp": 1787507704770,
+    "request": {
+      "id": "1787507704745",
+      "name": "New Request",
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/auth/test",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsMrk",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "none"
+      },
+      "auth": {
+        "type": "bearer",
+        "bearer": {
+          "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsMrk"
+        }
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "connection": "keep-alive",
+        "content-length": "11",
+        "content-type": "application/json",
+        "date": "Sun, 23 Aug 2026 17:55:04 GMT",
+        "expires": "0",
+        "keep-alive": "timeout=60",
+        "pragma": "no-cache",
+        "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0"
+      },
+      "body": "Hello World",
+      "time": 20,
+      "size": 11,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787507729744",
+    "timestamp": 1787507729744,
+    "request": {
+      "id": "1787507729696",
+      "name": "New Request",
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/auth/test",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNjY3NiwiZXhwIjoxNzg3NTkzMDc2fQ.ZMca87BL6sDyAJb3HXHh_5a-8Nrgjs56Sf0aZxOevYI",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "none"
+      },
+      "auth": {
+        "type": "bearer",
+        "bearer": {
+          "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNjY3NiwiZXhwIjoxNzg3NTkzMDc2fQ.ZMca87BL6sDyAJb3HXHh_5a-8Nrgjs56Sf0aZxOevYI"
+        }
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "connection": "keep-alive",
+        "content-length": "11",
+        "content-type": "application/json",
+        "date": "Sun, 23 Aug 2026 17:55:29 GMT",
+        "expires": "0",
+        "keep-alive": "timeout=60",
+        "pragma": "no-cache",
+        "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0"
+      },
+      "body": "Hello World",
+      "time": 41,
+      "size": 11,
+      "cookies": []
+    }
+  },
+  {
+    "id": "1787507730670",
+    "timestamp": 1787507730670,
+    "request": {
+      "id": "1787507730635",
+      "name": "New Request",
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/auth/test",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNjY3NiwiZXhwIjoxNzg3NTkzMDc2fQ.ZMca87BL6sDyAJb3HXHh_5a-8Nrgjs56Sf0aZxOevYI",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "none"
+      },
+      "auth": {
+        "type": "bearer",
+        "bearer": {
+          "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNjY3NiwiZXhwIjoxNzg3NTkzMDc2fQ.ZMca87BL6sDyAJb3HXHh_5a-8Nrgjs56Sf0aZxOevYI"
+        }
+      },
+      "inheritAuth": true
+    },
+    "response": {
+      "status": 200,
+      "statusText": "",
+      "headers": {
+        "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+        "connection": "keep-alive",
+        "content-length": "11",
+        "content-type": "application/json",
+        "date": "Sun, 23 Aug 2026 17:55:30 GMT",
+        "expires": "0",
+        "keep-alive": "timeout=60",
+        "pragma": "no-cache",
+        "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "x-xss-protection": "0"
+      },
+      "body": "Hello World",
+      "time": 31,
+      "size": 11,
+      "cookies": []
+    }
+  }
+]

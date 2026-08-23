@@ -1,0 +1,344 @@
+{
+  "tabs": [
+    {
+      "id": "1787506138823to05",
+      "tabKind": "request",
+      "name": "New Request",
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/auth/signup",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"userName\": \"test1\",\n  \"fullName\": \"test\",\n  \"email\": \"test@gmai.com\",\n  \"gender\": \"male\",\n  \"password\": \"test@123\"\n}"
+      },
+      "auth": {
+        "type": "none"
+      },
+      "inheritAuth": true,
+      "inheritScripts": false,
+      "preRequestScript": "",
+      "testScript": "",
+      "testRules": [],
+      "setVariables": [],
+      "activeTab": "body",
+      "responseTab": "body",
+      "sourceRequestId": null,
+      "sourceCollectionId": null,
+      "sourceFolderPath": null,
+      "sourceScope": "local",
+      "proxyId": null,
+      "certificateConfig": null,
+      "inheritCertificate": false,
+      "response": {
+        "status": 201,
+        "statusText": "",
+        "headers": {
+          "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+          "connection": "keep-alive",
+          "content-type": "application/json",
+          "date": "Sun, 23 Aug 2026 17:37:56 GMT",
+          "expires": "0",
+          "keep-alive": "timeout=60",
+          "pragma": "no-cache",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "0"
+        },
+        "body": "{\"accessToken\":\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNjY3NiwiZXhwIjoxNzg3NTkzMDc2fQ.ZMca87BL6sDyAJb3HXHh_5a-8Nrgjs56Sf0aZxOevYI\",\"tokenType\":\"Bearer\",\"user\":{\"avatarUrl\":null,\"email\":\"test@gmai.com\",\"fullName\":\"test\",\"gender\":\"male\",\"id\":\"dbf0bb54-a680-478b-81b9-0f01476d69d2\",\"role\":\"USER\",\"userName\":\"test1\"}}",
+        "time": 1088,
+        "size": 507,
+        "actualRequest": {
+          "method": "POST",
+          "url": "http://localhost:8080/api/v1/auth/signup",
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          "body": "{\n  \"userName\": \"test1\",\n  \"fullName\": \"test\",\n  \"email\": \"test@gmai.com\",\n  \"gender\": \"male\",\n  \"password\": \"test@123\"\n}",
+          "protocol": "HTTP/1.1",
+          "certificateNames": "System Trust Store"
+        },
+        "cookies": [],
+        "timingPhases": [
+          {
+            "name": "Environment",
+            "duration": 3
+          },
+          {
+            "name": "Auth",
+            "duration": 0
+          },
+          {
+            "name": "HTTP Request",
+            "duration": 1088
+          },
+          {
+            "name": "Post-processing",
+            "duration": 0
+          }
+        ]
+      },
+      "error": null,
+      "loading": false,
+      "wsConnected": false,
+      "wsUrl": null,
+      "wsMessages": [],
+      "grpcConnected": false,
+      "grpcStreaming": false,
+      "grpcMessages": [],
+      "grpcConfig": null,
+      "groupId": null,
+      "mcpDescription": "",
+      "mcpInputSchema": "",
+      "collectionId": null,
+      "folderId": null,
+      "folderPath": null,
+      "editorScope": "local"
+    },
+    {
+      "id": "178750676279499g4",
+      "tabKind": "request",
+      "name": "New Request",
+      "method": "POST",
+      "url": "http://localhost:8080/api/v1/auth/login",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "enabled": true
+        },
+        {
+          "key": "Authorization",
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNjY3NiwiZXhwIjoxNzg3NTkzMDc2fQ.ZMca87BL6sDyAJb3HXHh_5a-8Nrgjs56Sf0aZxOevYI",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"test@gmai.com\",\n  \"password\": \"test@123\"\n}"
+      },
+      "auth": {
+        "type": "none"
+      },
+      "inheritAuth": true,
+      "inheritScripts": false,
+      "preRequestScript": "",
+      "testScript": "",
+      "testRules": [],
+      "setVariables": [],
+      "activeTab": "headers",
+      "responseTab": "body",
+      "sourceRequestId": null,
+      "sourceCollectionId": null,
+      "sourceFolderPath": null,
+      "sourceScope": "local",
+      "proxyId": null,
+      "certificateConfig": null,
+      "inheritCertificate": false,
+      "response": {
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+          "connection": "keep-alive",
+          "content-type": "application/json",
+          "date": "Sun, 23 Aug 2026 17:44:52 GMT",
+          "expires": "0",
+          "keep-alive": "timeout=60",
+          "pragma": "no-cache",
+          "transfer-encoding": "chunked",
+          "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "0"
+        },
+        "body": "{\"accessToken\":\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNzA5MiwiZXhwIjoxNzg3NTkzNDkyfQ.sVpN3MDnwXy7NIlEENQ0Je3wh2Nz0f7KrAQeoPWsMrk\",\"tokenType\":\"Bearer\",\"user\":{\"avatarUrl\":null,\"email\":\"test@gmai.com\",\"fullName\":\"test\",\"gender\":\"male\",\"id\":\"dbf0bb54-a680-478b-81b9-0f01476d69d2\",\"role\":\"USER\",\"userName\":\"test1\"}}",
+        "time": 158,
+        "size": 507,
+        "actualRequest": {
+          "method": "POST",
+          "url": "http://localhost:8080/api/v1/auth/login",
+          "headers": {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNjY3NiwiZXhwIjoxNzg3NTkzMDc2fQ.ZMca87BL6sDyAJb3HXHh_5a-8Nrgjs56Sf0aZxOevYI"
+          },
+          "body": "{\n  \"email\": \"test@gmai.com\",\n  \"password\": \"test@123\"\n}",
+          "protocol": "HTTP/1.1",
+          "certificateNames": "System Trust Store"
+        },
+        "cookies": [],
+        "timingPhases": [
+          {
+            "name": "Environment",
+            "duration": 1
+          },
+          {
+            "name": "Auth",
+            "duration": 0
+          },
+          {
+            "name": "HTTP Request",
+            "duration": 158
+          },
+          {
+            "name": "Post-processing",
+            "duration": 0
+          }
+        ]
+      },
+      "error": null,
+      "loading": false,
+      "wsConnected": false,
+      "wsUrl": null,
+      "wsMessages": [],
+      "grpcConnected": false,
+      "grpcStreaming": false,
+      "grpcMessages": [],
+      "grpcConfig": null,
+      "groupId": null,
+      "mcpDescription": "",
+      "mcpInputSchema": "",
+      "collectionId": null,
+      "folderId": null,
+      "folderPath": null,
+      "editorScope": "local"
+    },
+    {
+      "id": "1787507459815cvwk",
+      "tabKind": "request",
+      "name": "New Request",
+      "method": "GET",
+      "url": "http://localhost:8080/api/v1/auth/test",
+      "params": [],
+      "headers": [
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "enabled": true
+        }
+      ],
+      "body": {
+        "type": "none"
+      },
+      "auth": {
+        "type": "bearer",
+        "bearer": {
+          "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNjY3NiwiZXhwIjoxNzg3NTkzMDc2fQ.ZMca87BL6sDyAJb3HXHh_5a-8Nrgjs56Sf0aZxOevYI"
+        }
+      },
+      "inheritAuth": true,
+      "inheritScripts": false,
+      "preRequestScript": "",
+      "testScript": "",
+      "testRules": [],
+      "setVariables": [],
+      "activeTab": "auth",
+      "responseTab": "body",
+      "sourceRequestId": null,
+      "sourceCollectionId": null,
+      "sourceFolderPath": null,
+      "sourceScope": "local",
+      "proxyId": null,
+      "certificateConfig": null,
+      "inheritCertificate": false,
+      "response": {
+        "status": 200,
+        "statusText": "",
+        "headers": {
+          "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+          "connection": "keep-alive",
+          "content-length": "11",
+          "content-type": "application/json",
+          "date": "Sun, 23 Aug 2026 17:55:30 GMT",
+          "expires": "0",
+          "keep-alive": "timeout=60",
+          "pragma": "no-cache",
+          "vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+          "x-content-type-options": "nosniff",
+          "x-frame-options": "DENY",
+          "x-xss-protection": "0"
+        },
+        "body": "Hello World",
+        "time": 31,
+        "size": 11,
+        "actualRequest": {
+          "method": "GET",
+          "url": "http://localhost:8080/api/v1/auth/test",
+          "headers": {
+            "Accept": "application/json",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkYmYwYmI1NC1hNjgwLTQ3OGItODFiOS0wZjAxNDc2ZDY5ZDIiLCJpZCI6ImRiZjBiYjU0LWE2ODAtNDc4Yi04MWI5LTBmMDE0NzZkNjlkMiIsImVtYWlsIjoidGVzdEBnbWFpLmNvbSIsInVzZXJuYW1lIjoidGVzdDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc4NzUwNjY3NiwiZXhwIjoxNzg3NTkzMDc2fQ.ZMca87BL6sDyAJb3HXHh_5a-8Nrgjs56Sf0aZxOevYI"
+          },
+          "body": null,
+          "protocol": "HTTP/1.1",
+          "certificateNames": "System Trust Store"
+        },
+        "cookies": [],
+        "timingPhases": [
+          {
+            "name": "Environment",
+            "duration": 1
+          },
+          {
+            "name": "Auth",
+            "duration": 0
+          },
+          {
+            "name": "HTTP Request",
+            "duration": 31
+          },
+          {
+            "name": "Post-processing",
+            "duration": 0
+          }
+        ]
+      },
+      "error": null,
+      "loading": false,
+      "wsConnected": false,
+      "wsUrl": null,
+      "wsMessages": [],
+      "grpcConnected": false,
+      "grpcStreaming": false,
+      "grpcMessages": [],
+      "grpcConfig": null,
+      "groupId": null,
+      "mcpDescription": "",
+      "mcpInputSchema": "",
+      "collectionId": null,
+      "folderId": null,
+      "folderPath": null,
+      "editorScope": "local"
+    }
+  ],
+  "groups": [],
+  "activeTabId": "1787507459815cvwk",
+  "currentView": "requests",
+  "sidebarTab": "collections",
+  "sidebarCollapsed": true,
+  "responseTab": "body",
+  "layoutMode": "horizontal",
+  "splitRatio": 0.5,
+  "horizontalSplitRatio": 0.5,
+  "selectedMockServerId": null
+}
