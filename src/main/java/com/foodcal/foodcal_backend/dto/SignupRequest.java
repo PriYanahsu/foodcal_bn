@@ -12,8 +12,6 @@ public class SignupRequest {
 
     private String gender;
 
-    private String avatarUrl;
-
     public String getUserName() {
         return userName;
     }
@@ -52,13 +50,5 @@ public class SignupRequest {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public String getAvatarUrl() {
-        return avatarUrl;
-    }
-
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
     }
 }

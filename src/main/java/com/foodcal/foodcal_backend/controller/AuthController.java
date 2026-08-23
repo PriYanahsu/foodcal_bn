@@ -2,6 +2,7 @@ package com.foodcal.foodcal_backend.controller;
 
 import com.foodcal.foodcal_backend.dto.AuthResponse;
 import com.foodcal.foodcal_backend.dto.SignupRequest;
+import com.foodcal.foodcal_backend.dto.LoginRequest;
 import com.foodcal.foodcal_backend.service.AuthService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
