@@ -75,6 +75,34 @@ public class AuthService {
         return response;
     }
 
+    public AuthResponse login(LoginRequest request) {
+
+        String email = request.getEmail().trim().toLowerCase();
+        String reqPassword = request.getPassword();
+
+        UserDetail user = userDetailRepository.findByEmailIgnoreCase(email);
+
+        if(user == null) {
+            throw new InvalidRequestException("Invalid email or password");
+        }
+
+        if(!passwordEncoder.matches(reqPassword, user.getPasswordHash())) {
+            throw new InvalidRequestException("Invalid email or password");
+        }
+
+        UserPrincipal principal = new UserPrincipal(
+            user.getId(),
+            user.getEmail(),
+            user.getUserName(),
+            user.getRole()
+        );
+
+        AuthResponse response = new AuthResponse();
+        response.setAccessToken(jwtUtil.createAccessToken(principal));
+        response.setUser(toUserResponse(user));
+        return response;
+    }
+
     private static void validate(SignupRequest request) {
         if (request == null) {
             throw new InvalidRequestException("Request body is required");
@@ -117,34 +145,5 @@ public class AuthService {
         }
         String trimmed = value.trim();
         return trimmed.isEmpty() ? null : trimmed;
-    }
-
-    public AuthResponse login(LoginRequest request) {
-
-        String email = request.getEmail().trim().toLowerCase();
-        String reqPassword = request.getPassword();
-
-        UserDetail user = userDetailRepository.findByEmailIgnoreCase(email);
-
-        if(user == null) {
-            throw new InvalidRequestException("Invalid email or password");
-        }
-
-        if(!passwordEncoder.matches(reqPassword, user.getPasswordHash())) {
-            throw new InvalidRequestException("Invalid email or password");
-        }
-
-        UserPrincipal principal = new UserPrincipal(
-            user.getId(),
-            user.getEmail(),
-            user.getUserName(),
-            user.getRole()
-        );
-
-        AuthResponse response = new AuthResponse();
-        response.setAccessToken(jwtUtil.createAccessToken(principal));
-        response.setUser(toUserResponse(user));
-        return response;
-
     }
 }
