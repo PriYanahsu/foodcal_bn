@@ -2,6 +2,7 @@ package com.foodcal.foodcal_backend.controller;
 
 import com.foodcal.foodcal_backend.entity.FitnessDetail;
 import com.foodcal.foodcal_backend.entity.UserDetail;
+import com.foodcal.foodcal_backend.repository.FitnessDetailRepository;
 import com.foodcal.foodcal_backend.security.UserPrincipal;
 import com.foodcal.foodcal_backend.service.FitnessService;
 import com.foodcal.foodcal_backend.service.UserDetailService;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Controller
@@ -21,28 +24,17 @@ import java.util.UUID;
 public class UserController {
 
     private final UserDetailService userDetailService;
-    private final FitnessService fitnessService;
 
-    public UserController(UserDetailService userDetailService, FitnessService fitnessService){
+    public UserController(
+            UserDetailService userDetailService,
+            FitnessService fitnessService,
+            FitnessDetailRepository fitnessDetailRepository
+    ){
         this.userDetailService = userDetailService;
-        this.fitnessService = fitnessService;
     }
 
-    @PutMapping("/userDetails/update")
+    @PutMapping("/update")
     public ResponseEntity<UserDetail> updateUserDetails(@RequestBody UserDetail user){
         return ResponseEntity.status(HttpStatus.OK).body(userDetailService.updateUser(user));
-    }
-
-    @PostMapping("/fitness/add")
-    public ResponseEntity<FitnessDetail> addFitnessDetails(
-            @RequestBody FitnessDetail fitnessDetails,
-            Authentication authentication
-    ){
-        UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
-
-        UUID userID = userPrincipal.getId();
-
-        return ResponseEntity.status(HttpStatus.OK)
-                .body(fitnessService.addFitnessDetail(fitnessDetails, userID));
     }
 }
