@@ -5,7 +5,6 @@ import java.util.UUID;
 public class UserResponse {
 
     private UUID id;
-    private String userName;
     private String fullName;
     private String email;
     private String gender;
@@ -18,14 +17,6 @@ public class UserResponse {
 
     public void setId(UUID id) {
         this.id = id;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public String getFullName() {
