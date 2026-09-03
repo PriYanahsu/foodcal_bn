@@ -10,13 +10,13 @@ public class UserPrincipal {
 
     private final UUID id;
     private final String email;
-    private final String username;
+    private final String fullName;
     private final String role;
 
-    public UserPrincipal(UUID id, String email, String username, String role){
+    public UserPrincipal(UUID id, String email, String fullName, String role){
         this.id = id;
         this.email = email;
-        this.username = username;
+        this.fullName = fullName;
         this.role = role;
     }
 
@@ -29,7 +29,7 @@ public class UserPrincipal {
     }
 
     public String getUsername() {
-        return username;
+        return fullName;
     }
 
     public String getRole() {

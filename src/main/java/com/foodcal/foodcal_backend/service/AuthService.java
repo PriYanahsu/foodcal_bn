@@ -43,17 +43,12 @@ public class AuthService {
         validate(request);
 
         String email = request.getEmail().trim().toLowerCase();
-        String userName = request.getUserName().trim();
 
         if (userDetailRepository.existsByEmailIgnoreCase(email)) {
             throw new DuplicateResourceException("Email already registered");
         }
-        if (userDetailRepository.existsByUserNameIgnoreCase(userName)) {
-            throw new DuplicateResourceException("Username already taken");
-        }
 
         UserDetail user = new UserDetail();
-        user.setUserName(userName);
         user.setFullName(request.getFullName().trim());
         user.setEmail(email);
         user.setGender(trimToNull(request.getGender()));
@@ -65,7 +60,7 @@ public class AuthService {
         UserPrincipal principal = new UserPrincipal(
             saved.getId(),
             saved.getEmail(),
-            saved.getUserName(),
+            saved.getFullName(),
             saved.getRole()
         );
 
@@ -93,7 +88,7 @@ public class AuthService {
         UserPrincipal principal = new UserPrincipal(
             user.getId(),
             user.getEmail(),
-            user.getUserName(),
+            user.getFullName(),
             user.getRole()
         );
 
@@ -131,7 +126,6 @@ public class AuthService {
     private static UserResponse toUserResponse(UserDetail user) {
         UserResponse response = new UserResponse();
         response.setId(user.getId());
-        response.setUserName(user.getUserName());
         response.setFullName(user.getFullName());
         response.setEmail(user.getEmail());
         response.setGender(user.getGender());

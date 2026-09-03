@@ -25,9 +25,6 @@ public class UserDetail {
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "user_name", nullable = false)
-    private String userName;
-
     @Column(name = "full_name")
     private String fullName;
 
@@ -77,10 +74,6 @@ public class UserDetail {
         return id;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
     public String getFullName() {
         return fullName;
     }
@@ -115,10 +108,6 @@ public class UserDetail {
 
     public void setId(UUID id) {
         this.id = id;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public void setFullName(String fullName) {

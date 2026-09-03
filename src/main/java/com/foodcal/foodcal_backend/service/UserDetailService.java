@@ -5,6 +5,8 @@ import com.foodcal.foodcal_backend.exception.InvalidRequestException;
 import com.foodcal.foodcal_backend.repository.UserDetailRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class UserDetailService {
 
@@ -14,14 +16,10 @@ public class UserDetailService {
         this.userDetailRepository = userDetailRepository;
     }
 
-    public UserDetail updateUser(UserDetail user) {
+    public UserDetail updateUser(UserDetail user, UUID userID) {
 
-        UserDetail userDetailDB = userDetailRepository.findById(user.getId())
+        UserDetail userDetailDB = userDetailRepository.findById(userID)
                 .orElseThrow(() -> new InvalidRequestException("User not found"));
-
-        if (isNotBlank(user.getUserName())) {
-            userDetailDB.setUserName(user.getUserName());
-        }
 
         if (isNotBlank(user.getFullName())) {
             userDetailDB.setFullName(user.getFullName());
@@ -44,5 +42,13 @@ public class UserDetailService {
 
     private static boolean isNotBlank(String value){
         return value != null && !value.trim().isEmpty();
+    }
+
+    public UserDetail getUserDetails(UUID userID){
+
+        UserDetail userFromDb = userDetailRepository.findById(userID)
+                .orElseThrow(() -> new RuntimeException("User NotFound"));
+
+        return userFromDb;
     }
 }
