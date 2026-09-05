@@ -1,5 +1,6 @@
 package com.foodcal.foodcal_backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -26,40 +27,44 @@ public class FitnessDetail {
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = false, unique = true)
+    @JsonIgnore
     private UserDetail user;
 
-    @Column(name = "age", nullable = false)
-    private int age;
+    @Column(name = "age", nullable = true)
+    private Integer age;
 
-    @Column(name = "height", nullable = false)
+    @Column(name = "height", nullable = true)
     private BigDecimal height;
 
-    @Column(name = "weight", nullable = false)
+    @Column(name = "weight", nullable = true)
     private BigDecimal weight;
 
-    @Column(name = "activity_level", nullable = false)
+    @Column(name = "activity_level", nullable = true)
     private String activityLevel;
 
-    @Column(name = "target_weight_kg", nullable = false)
+    @Column(name = "target_weight_kg", nullable = true)
     private BigDecimal targetWeightKg;
 
-    @Column(name = "target_date", nullable = false)
+    @Column(name = "objective", nullable = true)
+    private String objective;
+
+    @Column(name = "target_date", nullable = true)
     private LocalDate targetDate;
 
-    @Column(name = "daily_calorie_target", nullable = false)
-    private int dailyCalorieTarget;
+    @Column(name = "daily_calorie_target", nullable = true)
+    private Integer dailyCalorieTarget;
 
-    @Column(name = "daily_protein_target_g", nullable = false)
+    @Column(name = "daily_protein_target_g", nullable = true)
     private BigDecimal dailyProteinTargetG;
 
-    @Column(name = "daily_carbs_target_g", nullable = false)
+    @Column(name = "daily_carbs_target_g", nullable = true)
     private BigDecimal dailyCarbsTargetG;
 
-    @Column(name = "daily_fat_target_g", nullable = false)
+    @Column(name = "daily_fat_target_g", nullable = true)
     private BigDecimal dailyFatTargetG;
 
     @JdbcTypeCode(SqlTypes.LONG32VARCHAR)
-    @Column(name = "ai_coach_advice", nullable = false)
+    @Column(name = "ai_coach_advice", nullable = true)
     private String aiCoachAdvice;
 
     public UUID getId() {
@@ -78,11 +83,11 @@ public class FitnessDetail {
         this.user = user;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -126,11 +131,11 @@ public class FitnessDetail {
         this.targetDate = targetDate;
     }
 
-    public int getDailyCalorieTarget() {
+    public Integer getDailyCalorieTarget() {
         return dailyCalorieTarget;
     }
 
-    public void setDailyCalorieTarget(int dailyCalorieTarget) {
+    public void setDailyCalorieTarget(Integer dailyCalorieTarget) {
         this.dailyCalorieTarget = dailyCalorieTarget;
     }
 
@@ -164,5 +169,13 @@ public class FitnessDetail {
 
     public void setAiCoachAdvice(String aiCoachAdvice) {
         this.aiCoachAdvice = aiCoachAdvice;
+    }
+
+    public void setObjective(String objective){
+        this.objective = objective;
+    }
+
+    public String getObjective(){
+        return objective;
     }
 }

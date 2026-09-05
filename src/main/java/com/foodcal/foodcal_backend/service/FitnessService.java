@@ -22,32 +22,29 @@ public class FitnessService {
         this.fitnessDetailRepository = fitnessDetailRepository;
     }
 
-    public FitnessDetail addFitnessDetail(
-            FitnessDetail fitnessDetail,
+    public FitnessDetail getFitnessDetail(
             UUID userId
     ) {
-        UserDetail user = userDetailRepository.findById(userId)
+        userDetailRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User does not exist"));
 
-        if (fitnessDetailRepository.existsByUserId(userId)) {
-            throw new RuntimeException("Fitness details already exist for this user");
-        }
-
-        FitnessDetail fitnessDetailDB = new FitnessDetail();
-        fitnessDetailDB.setUser(user);
-        copyFitnessFields(fitnessDetailDB, fitnessDetail);
-
-        return fitnessDetailRepository.save(fitnessDetailDB);
+        return fitnessDetailRepository.findByUserId(userId)
+                .orElse(null);
     }
 
     public FitnessDetail updateFitnessDetail(
             UUID userID,
-            UUID fitnessID,
             FitnessDetail fitnessDetail
     ){
-        FitnessDetail fitnessDetailDB = fitnessDetailRepository.findByIdAndUserId(fitnessID, userID)
-                .orElseThrow(() -> new RuntimeException("Fitness detail not match with user"));
+        UserDetail user = userDetailRepository.findById(userID)
+                .orElseThrow(() -> new RuntimeException("User does not exist"));
 
+        FitnessDetail fitnessDetailDB = fitnessDetailRepository.findByUserId(userID)
+                .orElseGet(() -> {
+                    FitnessDetail created = new FitnessDetail();
+                    created.setUser(user);
+                    return created;
+                });
         copyFitnessFields(fitnessDetailDB, fitnessDetail);
         return fitnessDetailRepository.save(fitnessDetailDB);
     }
@@ -55,17 +52,65 @@ public class FitnessService {
     public void copyFitnessFields(
             FitnessDetail fitnessDetailDB,
             FitnessDetail fitnessDetail
-    ){
-        fitnessDetailDB.setAge(fitnessDetail.getAge());
-        fitnessDetailDB.setHeight(fitnessDetail.getHeight());
-        fitnessDetailDB.setWeight(fitnessDetail.getWeight());
-        fitnessDetailDB.setActivityLevel(fitnessDetail.getActivityLevel());
-        fitnessDetailDB.setTargetWeightKg(fitnessDetail.getTargetWeightKg());
-        fitnessDetailDB.setTargetDate(fitnessDetail.getTargetDate());
-        fitnessDetailDB.setDailyCalorieTarget(fitnessDetail.getDailyCalorieTarget());
-        fitnessDetailDB.setDailyProteinTargetG(fitnessDetail.getDailyProteinTargetG());
-        fitnessDetailDB.setDailyCarbsTargetG(fitnessDetail.getDailyCarbsTargetG());
-        fitnessDetailDB.setDailyFatTargetG(fitnessDetail.getDailyFatTargetG());
-        fitnessDetailDB.setAiCoachAdvice(fitnessDetail.getAiCoachAdvice());
+    ) {
+        if (fitnessDetail.getAge() != null) {
+            fitnessDetailDB.setAge(fitnessDetail.getAge());
+        }
+
+        if (fitnessDetail.getHeight() != null) {
+            fitnessDetailDB.setHeight(fitnessDetail.getHeight());
+        }
+
+        if (fitnessDetail.getWeight() != null) {
+            fitnessDetailDB.setWeight(fitnessDetail.getWeight());
+        }
+
+        if (fitnessDetail.getActivityLevel() != null) {
+            fitnessDetailDB.setActivityLevel(fitnessDetail.getActivityLevel());
+        }
+
+        if (fitnessDetail.getTargetWeightKg() != null) {
+            fitnessDetailDB.setTargetWeightKg(fitnessDetail.getTargetWeightKg());
+        }
+
+        if (fitnessDetail.getTargetDate() != null) {
+            fitnessDetailDB.setTargetDate(fitnessDetail.getTargetDate());
+        }
+
+        if (fitnessDetail.getDailyCalorieTarget() != null) {
+            fitnessDetailDB.setDailyCalorieTarget(
+                    fitnessDetail.getDailyCalorieTarget()
+            );
+        }
+
+        if (fitnessDetail.getDailyProteinTargetG() != null) {
+            fitnessDetailDB.setDailyProteinTargetG(
+                    fitnessDetail.getDailyProteinTargetG()
+            );
+        }
+
+        if (fitnessDetail.getDailyCarbsTargetG() != null) {
+            fitnessDetailDB.setDailyCarbsTargetG(
+                    fitnessDetail.getDailyCarbsTargetG()
+            );
+        }
+
+        if (fitnessDetail.getDailyFatTargetG() != null) {
+            fitnessDetailDB.setDailyFatTargetG(
+                    fitnessDetail.getDailyFatTargetG()
+            );
+        }
+
+        if (fitnessDetail.getAiCoachAdvice() != null) {
+            fitnessDetailDB.setAiCoachAdvice(
+                    fitnessDetail.getAiCoachAdvice()
+            );
+        }
+
+        if(fitnessDetail.getObjective() != null){
+            fitnessDetailDB.setObjective(
+                    fitnessDetail.getObjective()
+            );
+        }
     }
 }
