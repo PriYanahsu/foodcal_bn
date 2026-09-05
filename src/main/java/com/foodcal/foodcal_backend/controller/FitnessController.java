@@ -7,10 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -26,9 +23,8 @@ public class FitnessController {
         this.fitnessService = fitnessService;
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<FitnessDetail> addFitnessDetails(
-            @RequestBody FitnessDetail fitnessDetails,
+    @GetMapping("/get")
+    public ResponseEntity<FitnessDetail> getFitnessDetails(
             Authentication authentication
     ){
         UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
@@ -36,7 +32,7 @@ public class FitnessController {
         UUID userID = userPrincipal.getId();
 
         return ResponseEntity.status(HttpStatus.OK)
-                .body(fitnessService.addFitnessDetail(fitnessDetails, userID));
+                .body(fitnessService.getFitnessDetail(userID));
     }
 
     @PutMapping("/update")
@@ -47,9 +43,8 @@ public class FitnessController {
         UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
 
         UUID userID = userPrincipal.getId();
-        UUID fitnessID = fitnessDetail.getId();
 
         return ResponseEntity.status(HttpStatus.OK)
-                .body(fitnessService.updateFitnessDetail(userID, fitnessID, fitnessDetail));
+                .body(fitnessService.updateFitnessDetail(userID, fitnessDetail));
     }
 }

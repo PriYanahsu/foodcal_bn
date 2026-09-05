@@ -8,7 +8,5 @@ import java.util.UUID;
 
 public interface FitnessDetailRepository extends JpaRepository<FitnessDetail, UUID> {
 
-    boolean existsByUserId(UUID userID);
-
-    Optional<FitnessDetail> findByIdAndUserId(UUID fitnessId, UUID userId);
+    Optional<FitnessDetail> findByUserId(UUID userId);
 }
