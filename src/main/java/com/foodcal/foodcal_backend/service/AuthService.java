@@ -11,7 +11,11 @@ import com.foodcal.foodcal_backend.exception.InvalidRequestException;
 import com.foodcal.foodcal_backend.repository.UserDetailRepository;
 import com.foodcal.foodcal_backend.security.JwtUtil;
 import com.foodcal.foodcal_backend.security.UserPrincipal;
+
+import java.util.UUID;
 import java.util.regex.Pattern;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -51,7 +55,6 @@ public class AuthService {
         UserDetail user = new UserDetail();
         user.setFullName(request.getFullName().trim());
         user.setEmail(email);
-        user.setGender(trimToNull(request.getGender()));
         user.setRole(DEFAULT_ROLE);
         user.setPasswordHash(passwordEncoder.encode(request.getPassword()));
 
@@ -98,12 +101,16 @@ public class AuthService {
         return response;
     }
 
+    public void deleteUser(UUID userID) {
+        if (!userDetailRepository.existsById(userID)) {
+            throw new RuntimeException("User not found");
+        }
+        userDetailRepository.deleteById(userID);
+    }
+
     private static void validate(SignupRequest request) {
         if (request == null) {
             throw new InvalidRequestException("Request body is required");
-        }
-        if (isBlank(request.getUserName()) || request.getUserName().trim().length() < 3) {
-            throw new InvalidRequestException("Username must be at least 3 characters");
         }
         if (isBlank(request.getFullName())) {
             throw new InvalidRequestException("Full name is required");
@@ -128,7 +135,7 @@ public class AuthService {
         response.setId(user.getId());
         response.setFullName(user.getFullName());
         response.setEmail(user.getEmail());
-        response.setGender(user.getGender());
+        response.setAvatarUrl(user.getAvatarUrl());
         response.setRole(user.getRole());
         return response;
     }

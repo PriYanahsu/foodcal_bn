@@ -6,11 +6,9 @@ import com.foodcal.foodcal_backend.dto.LoginRequest;
 import com.foodcal.foodcal_backend.service.AuthService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 
 @RestController
@@ -37,4 +35,11 @@ public class AuthController {
     public ResponseEntity<String> test() {
         return ResponseEntity.status(HttpStatus.OK).body("Hello World");
     }
+
+    @DeleteMapping("/{userID}")
+    public ResponseEntity<String> deleteUser(@PathVariable UUID userID) {
+        authService.deleteUser(userID);
+        return ResponseEntity.status(HttpStatus.OK).body("User Deleted");
+    }
+
 }

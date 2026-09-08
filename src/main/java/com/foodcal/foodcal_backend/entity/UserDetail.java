@@ -1,17 +1,8 @@
 package com.foodcal.foodcal_backend.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreUpdate;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -35,10 +26,7 @@ public class UserDetail {
     @Column(name = "password_hash", nullable = false)
     private String passwordHash;
 
-    @Column(name = "gender")
-    private String gender;
-
-    @Column(name = "avatar_url")
+    @Column(name = "avatar_url", columnDefinition = "TEXT")
     private String avatarUrl;
 
     @Column(name = "role")
@@ -50,16 +38,40 @@ public class UserDetail {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
+    @JsonIgnore
+    @OneToOne(
+            mappedBy = "user",
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private FitnessDetail fitness;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @JsonIgnore
+    @OneToMany(
+            mappedBy = "user",
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<FoodLog> foodLogs;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @JsonIgnore
+    @OneToMany(
+            mappedBy = "user",
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<Notification> notifications;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @JsonIgnore
+    @OneToMany(
+            mappedBy = "user",
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<Subscription> subscriptions;
 
     public FitnessDetail getFitness() {
@@ -84,10 +96,6 @@ public class UserDetail {
 
     public String getPasswordHash() {
         return passwordHash;
-    }
-
-    public String getGender() {
-        return gender;
     }
 
     public String getAvatarUrl() {
@@ -122,9 +130,6 @@ public class UserDetail {
         this.passwordHash = passwordHash;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
 
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
