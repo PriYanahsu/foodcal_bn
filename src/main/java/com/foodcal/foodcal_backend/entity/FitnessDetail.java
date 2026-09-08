@@ -30,6 +30,9 @@ public class FitnessDetail {
     @JsonIgnore
     private UserDetail user;
 
+    @Column(name = "gender")
+    private String gender;
+
     @Column(name = "age", nullable = true)
     private Integer age;
 
@@ -177,5 +180,13 @@ public class FitnessDetail {
 
     public String getObjective(){
         return objective;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getGender() {
+        return gender;
     }
 }

@@ -112,5 +112,11 @@ public class FitnessService {
                     fitnessDetail.getObjective()
             );
         }
+
+        if(fitnessDetail.getGender() != null){
+            fitnessDetailDB.setGender(
+                    fitnessDetail.getGender()
+            );
+        }
     }
 }

@@ -4,6 +4,8 @@ import com.foodcal.foodcal_backend.entity.UserDetail;
 import com.foodcal.foodcal_backend.exception.InvalidRequestException;
 import com.foodcal.foodcal_backend.repository.UserDetailRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.UUID;
 
@@ -11,9 +13,14 @@ import java.util.UUID;
 public class UserDetailService {
 
     private final UserDetailRepository userDetailRepository;
+    private final SupabaseStorageService supabaseStorageService;
 
-    public UserDetailService(UserDetailRepository userDetailRepository){
+    public UserDetailService(
+            UserDetailRepository userDetailRepository,
+            SupabaseStorageService supabaseStorageService
+    ){
         this.userDetailRepository = userDetailRepository;
+        this.supabaseStorageService = supabaseStorageService;
     }
 
     public UserDetail updateUser(UserDetail user, UUID userID) {
@@ -27,10 +34,6 @@ public class UserDetailService {
 
         if (isNotBlank(user.getEmail())) {
             userDetailDB.setEmail(user.getEmail());
-        }
-
-        if (isNotBlank(user.getGender())) {
-            userDetailDB.setGender(user.getGender());
         }
 
         if (isNotBlank(user.getAvatarUrl())) {
@@ -50,5 +53,15 @@ public class UserDetailService {
                 .orElseThrow(() -> new RuntimeException("User NotFound"));
 
         return userFromDb;
+    }
+
+    @Transactional
+    public UserDetail uploadAvatar(UUID userID, MultipartFile file) {
+        UserDetail user = userDetailRepository.findById(userID)
+                .orElseThrow(() -> new InvalidRequestException("User not found"));
+
+        String url = supabaseStorageService.uploadAvatar(userID, file);
+        user.setAvatarUrl(url);
+        return userDetailRepository.save(user);
     }
 }
