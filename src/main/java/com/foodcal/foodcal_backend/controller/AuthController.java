@@ -1,8 +1,7 @@
 package com.foodcal.foodcal_backend.controller;
 
-import com.foodcal.foodcal_backend.dto.AuthResponse;
-import com.foodcal.foodcal_backend.dto.SignupRequest;
-import com.foodcal.foodcal_backend.dto.LoginRequest;
+import com.foodcal.foodcal_backend.dto.*;
+import com.foodcal.foodcal_backend.security.JwtUtil;
 import com.foodcal.foodcal_backend.service.AuthService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +15,25 @@ import java.util.UUID;
 public class AuthController {
 
     private final AuthService authService;
+    private JwtUtil jwtUtil;
 
-    public AuthController(AuthService authService) {
+    public AuthController(
+            AuthService authService,
+            JwtUtil jwtUtil
+    ) {
         this.authService = authService;
+        this.jwtUtil = jwtUtil;
+    }
+
+    @PostMapping("/refresh-token")
+    public ResponseEntity<RefreshTokenResponse> refreshToken(
+            @RequestBody RefreshTokenRequest request
+    ) {
+        return ResponseEntity.ok(
+                jwtUtil.createAccessTokenFromRefreshToken(
+                        request.getRefreshToken()
+                )
+        );
     }
 
     @PostMapping("/signup")

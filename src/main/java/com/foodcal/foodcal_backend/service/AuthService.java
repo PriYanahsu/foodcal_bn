@@ -69,6 +69,7 @@ public class AuthService {
 
         AuthResponse response = new AuthResponse();
         response.setAccessToken(jwtUtil.createAccessToken(principal));
+        response.setRefreshToken(jwtUtil.createRefreshToken(principal));
         response.setUser(toUserResponse(saved));
         return response;
     }
@@ -97,6 +98,7 @@ public class AuthService {
 
         AuthResponse response = new AuthResponse();
         response.setAccessToken(jwtUtil.createAccessToken(principal));
+        response.setRefreshToken(jwtUtil.createRefreshToken(principal));
         response.setUser(toUserResponse(user));
         return response;
     }
