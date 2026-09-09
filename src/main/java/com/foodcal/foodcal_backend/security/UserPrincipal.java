@@ -28,7 +28,7 @@ public class UserPrincipal {
         return email;
     }
 
-    public String getUsername() {
+    public String getUserName() {
         return fullName;
     }
 

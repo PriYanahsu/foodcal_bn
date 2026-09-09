@@ -39,6 +39,7 @@ public class SecurityConfigration {
                     .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                     .requestMatchers("/api/v1/auth/signup").permitAll()
                     .requestMatchers("/api/v1/auth/login").permitAll()
+                        .requestMatchers("/api/v1/auth/refresh-token").permitAll()
                     .requestMatchers("/api/v1/admin/**").hasAuthority("ADMIN")
                     .requestMatchers("/api/v1/**").authenticated()
                     .anyRequest().denyAll()

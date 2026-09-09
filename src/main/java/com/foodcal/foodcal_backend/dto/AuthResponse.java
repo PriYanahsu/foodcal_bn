@@ -3,6 +3,7 @@ package com.foodcal.foodcal_backend.dto;
 public class AuthResponse {
 
     private String accessToken;
+    private String refreshToken;
     private String tokenType = "Bearer";
     private UserResponse user;
 
@@ -12,6 +13,14 @@ public class AuthResponse {
 
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
+    }
+
+    public String getRefreshToken() {
+        return refreshToken;
+    }
+
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
     }
 
     public String getTokenType() {
