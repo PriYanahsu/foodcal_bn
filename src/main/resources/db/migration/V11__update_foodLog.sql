@@ -1,0 +1,3 @@
+ALTER TABLE food_log
+ADD COLUMN IF NOT EXISTS quantity TEXT,
+ADD COLUMN IF NOT EXISTS analysis_notes TEXT;

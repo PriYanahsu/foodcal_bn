@@ -27,6 +27,9 @@ public class FoodLog {
     @Column(name = "food_name")
     private String foodName;
 
+    @Column(name = "quantity")
+    private String quantity;
+
     @Column(name = "calories")
     private Double calories;
 
@@ -41,6 +44,9 @@ public class FoodLog {
 
     @Column(name = "ai_confidence")
     private Double aiConfidence;
+
+    @Column(name = "analysis_notes")
+    private String analysisNotes;
 
     @Column(name = "image_path")
     private String imagePath;
@@ -64,6 +70,18 @@ public class FoodLog {
 
     public String getFoodName() {
         return foodName;
+    }
+
+    public String getQuantity() { return quantity; }
+
+    public void setQuantity(String quantity){
+        this.quantity = quantity;
+    }
+
+    public String getAnalysisNotes() { return analysisNotes; }
+
+    public void setAnalysisNotes(String analysisNotes){
+        this.analysisNotes = analysisNotes;
     }
 
     public Double getCalories() {
