@@ -36,16 +36,19 @@ public class SupabaseStorageService {
 
     private final RestClient rest;
     private final String publicBaseUrl;
-    private final String bucket;
+    private final String avatarBucket;
+    private final String mealImageBucket;
 
     public SupabaseStorageService(
         @Value("${supabase.url}") String supabaseUrl,
         @Value("${supabase.service-role-key}") String serviceRoleKey,
-        @Value("${supabase.avatar-bucket}") String bucket
+        @Value("${supabase.avatar-bucket}") String avatarBucket,
+        @Value("${supabase.meal-image-bucket}") String mealImageBucket
     ) {
         String base = supabaseUrl.replaceAll("/$", "");
         this.publicBaseUrl = base;
-        this.bucket = bucket;
+        this.avatarBucket = avatarBucket;
+        this.mealImageBucket = mealImageBucket;
         this.rest = RestClient.builder()
             .baseUrl(base + "/storage/v1")
             .defaultHeader("Authorization", "Bearer " + serviceRoleKey)
@@ -69,7 +72,7 @@ public class SupabaseStorageService {
 
         try {
             rest.post()
-                .uri("/object/{bucket}/{userId}/{filename}", bucket, userId.toString(), filename)
+                .uri("/object/{bucket}/{userId}/{filename}", avatarBucket, userId.toString(), filename)
                 .contentType(MediaType.parseMediaType(contentType.equals("image/jpg") ? "image/jpeg" : contentType))
                 .header("x-upsert", "true")
                 .body(bytes)
@@ -85,13 +88,58 @@ public class SupabaseStorageService {
 
         return publicBaseUrl
             + "/storage/v1/object/public/"
-            + bucket
+            + avatarBucket
             + "/"
             + userId
             + "/"
             + filename
             + "?t="
             + System.currentTimeMillis();
+    }
+
+
+    public String uploadFoodLog(UUID userId, MultipartFile file) {
+        if (file == null || file.isEmpty()) {
+            throw new InvalidRequestException("File is required");
+        }
+
+        String contentType = normalizeContentType(file);
+        String filename = UUID.randomUUID() + "." + EXTENSIONS.get(contentType);
+        byte[] bytes;
+        try {
+            bytes = file.getBytes();
+        } catch (IOException e) {
+            throw new InvalidRequestException("Could not read uploaded file");
+        }
+
+        try {
+            rest.post()
+                    .uri("/object/{bucket}/{userId}/{filename}",
+                            mealImageBucket,
+                            userId.toString(),
+                            filename)
+                    .contentType(MediaType.parseMediaType(
+                            contentType.equals("image/jpg") ? "image/jpeg" : contentType))
+                    .body(bytes)
+                    .retrieve()
+                    .toBodilessEntity();
+        } catch (RestClientResponseException e) {
+            log.error("Supabase storage upload failed: {} {}", e.getStatusCode(), e.getResponseBodyAsString());
+            throw new InvalidRequestException("Failed to upload avatar");
+        } catch (RestClientException e) {
+            log.error("Supabase storage upload failed", e);
+            throw new InvalidRequestException("Failed to upload avatar");
+        }
+
+        return publicBaseUrl
+                + "/storage/v1/object/public/"
+                + mealImageBucket
+                + "/"
+                + userId
+                + "/"
+                + filename
+                + "?t="
+                + System.currentTimeMillis();
     }
 
     private static String normalizeContentType(MultipartFile file) {
