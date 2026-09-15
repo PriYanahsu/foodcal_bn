@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -69,12 +70,24 @@ public class FoodController {
     public ResponseEntity<List<FoodLog>> getFoodLogDateResponse(
             @PathVariable LocalDate date,
             Authentication authentication
-    ){
+    ) {
         UserPrincipal userPrincipal =
                 (UserPrincipal) authentication.getPrincipal();
 
         return ResponseEntity.ok(
-                foodService.getFoodLog(userPrincipal.getId(), date)
+                foodService.getFoodLogByDate(userPrincipal.getId(), date)
+        );
+    }
+
+    @GetMapping("/history/allLogs")
+    public ResponseEntity<Map<LocalDate, FoodLogStatsDateResponse>> getFoodLogDateResponse(
+            Authentication authentication
+    ) {
+        UserPrincipal userPrincipal =
+                (UserPrincipal) authentication.getPrincipal();
+
+        return ResponseEntity.ok(
+                foodService.getFoodLog(userPrincipal.getId())
         );
     }
 }

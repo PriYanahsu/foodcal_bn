@@ -14,4 +14,6 @@ public interface FoodLogRepository extends JpaRepository<FoodLog, UUID> {
 
     List<FoodLog> findByUserIdAndDate(UUID userId, LocalDate date);
 
+    List<FoodLog> findByUserId(UUID userId);
+
 }
