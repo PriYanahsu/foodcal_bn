@@ -8,6 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -38,6 +40,9 @@ public class FoodLog {
 
     @Column(name = "fat_g")
     private Double fatG;
+
+    @Column(name = "date")
+    private LocalDate date;
 
     @Column(name = "carbohydrate_g")
     private Double carbohydrateG;
@@ -166,5 +171,13 @@ public class FoodLog {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public LocalDate getDate(){
+        return date;
+    }
+
+    public void setDate(LocalDate date){
+        this.date = date;
     }
 }

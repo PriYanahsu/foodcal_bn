@@ -1,8 +1,10 @@
 package com.foodcal.foodcal_backend.controller;
 
+import com.foodcal.foodcal_backend.dto.FoodLogStatsDateResponse;
 import com.foodcal.foodcal_backend.entity.FoodLog;
 import com.foodcal.foodcal_backend.security.UserPrincipal;
 import com.foodcal.foodcal_backend.service.FoodService;
+import lombok.Data;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +12,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -44,6 +49,32 @@ public class FoodController {
 
         return ResponseEntity.ok(
                 foodService.addFoodService(userID, file, foodData)
+        );
+    }
+
+    @GetMapping("/stats/{date}")
+    public ResponseEntity<FoodLogStatsDateResponse> getStatsFoodLog(
+            @PathVariable LocalDate date,
+            Authentication authentication
+    ) {
+        UserPrincipal userPrincipal =
+                (UserPrincipal) authentication.getPrincipal();
+
+        return ResponseEntity.ok(
+                foodService.getStatsFoodLog(userPrincipal.getId(), date)
+        );
+    }
+
+    @GetMapping("/logs/{date}")
+    public ResponseEntity<List<FoodLog>> getFoodLogDateResponse(
+            @PathVariable LocalDate date,
+            Authentication authentication
+    ){
+        UserPrincipal userPrincipal =
+                (UserPrincipal) authentication.getPrincipal();
+
+        return ResponseEntity.ok(
+                foodService.getFoodLog(userPrincipal.getId(), date)
         );
     }
 }
