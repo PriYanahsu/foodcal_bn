@@ -58,11 +58,15 @@ public class FoodService {
         return newFoodLog;
     }
 
-
-
-    public List<FoodLog> getFoodLog(UUID userId, LocalDate date){
-
+    public List<FoodLog> getFoodLogByDate(UUID userId, LocalDate date){
         List<FoodLog> allFoods = foodLogRepository.findByUserIdAndDate(userId, date);
+        return allFoods;
+    }
+
+
+    public Map<LocalDate, FoodLogStatsDateResponse> getFoodLog(UUID userId){
+
+        List<FoodLog> allFoods = foodLogRepository.findByUserId(userId);
 
         Map<LocalDate, FoodLogStatsDateResponse> getAllUserDataUsingDate = new TreeMap<>();
 
@@ -70,10 +74,10 @@ public class FoodService {
             calculatePerDayMacros(foodlog, getAllUserDataUsingDate);
         }
 
-        return allFoods;
+        return getAllUserDataUsingDate;
     }
 
-    public Map<LocalDate, FoodLogStatsDateResponse> calculatePerDayMacros(
+    public void calculatePerDayMacros(
             FoodLog foodlog,
             Map<LocalDate, FoodLogStatsDateResponse> getAllUserDataUsingDate
     ){
@@ -98,7 +102,6 @@ public class FoodService {
                     ));
         }
 
-        return getAllUserDataUsingDate;
     }
 
     public FoodLogStatsDateResponse incrementMacros(
