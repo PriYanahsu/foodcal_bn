@@ -1,0 +1,28 @@
+#Stage 1:- Build
+
+FROM maven:3.9-eclipse-temurin-17 as build
+
+WORKDIR /app
+
+copy pom.xml .
+
+RUN --mount=type=cache,target=/root/.m2 \
+    mvn dependency:go-offline
+
+COPY src ./src
+
+RUN --mount=type=cache,target=/root/.m2 \
+    mvn package -DskipTests
+
+
+#Stage 2:- Runtime \
+
+FROM eclipse-temurin-17
+
+WORKDIR /app
+
+COPY --from=build /app/target/*.jar app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
