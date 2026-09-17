@@ -1,10 +1,10 @@
 #Stage 1:- Build
 
-FROM maven:3.9-eclipse-temurin-17 as build
+FROM maven:3.9-eclipse-temurin-17 AS build
 
 WORKDIR /app
 
-copy pom.xml .
+COPY pom.xml .
 
 RUN --mount=type=cache,target=/root/.m2 \
     mvn dependency:go-offline
@@ -15,7 +15,7 @@ RUN --mount=type=cache,target=/root/.m2 \
     mvn package -DskipTests
 
 
-#Stage 2:- Runtime \
+#Stage 2:- Runtime 
 
 FROM eclipse-temurin-17
 
