@@ -14,7 +14,6 @@ import java.util.UUID;
 @Controller
 @RequestMapping("/api/v1/fitness")
 public class FitnessController {
-
     private final FitnessService fitnessService;
 
     public FitnessController (
