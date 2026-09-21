@@ -11,6 +11,7 @@ import jakarta.persistence.Table;
 import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.UUID;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "Subscription")
@@ -23,6 +24,7 @@ public class Subscription {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnore
     private UserDetail user;
 
     @Column(name = "plan")
