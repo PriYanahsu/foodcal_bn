@@ -74,6 +74,47 @@ public class UserDetail {
     )
     private List<Subscription> subscriptions;
 
+    @JsonIgnore
+    @OneToMany(
+            mappedBy = "user",
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Weight> weights;
+
+    public List<Weight> getWeights() {
+        return weights;
+    }
+
+    public void setWeights(List<Weight> weights) {
+        this.weights = weights;
+    }
+
+    public List<FoodLog> getFoodLogs() {
+        return foodLogs;
+    }
+
+    public void setFoodLogs(List<FoodLog> foodLogs) {
+        this.foodLogs = foodLogs;
+    }
+
+    public List<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(List<Notification> notifications) {
+        this.notifications = notifications;
+    }
+
+    public List<Subscription> getSubscriptions() {
+        return subscriptions;
+    }
+
+    public void setSubscriptions(List<Subscription> subscriptions) {
+        this.subscriptions = subscriptions;
+    }
+
     public FitnessDetail getFitness() {
         return fitness;
     }
