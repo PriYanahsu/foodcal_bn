@@ -53,7 +53,12 @@ public class SecurityConfigration {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        List<String> allowedOrigins = Arrays.asList(frontendUrl.split(","));
+        // Trimmed, so "https://a.app, https://b.app" in the env var still matches both origins.
+        List<String> allowedOrigins = Arrays.stream(frontendUrl.split(","))
+            .map(String::trim)
+            .map(origin -> origin.replaceAll("/+$", ""))
+            .filter(origin -> !origin.isEmpty())
+            .toList();
         configuration.setAllowedOrigins(allowedOrigins);
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));

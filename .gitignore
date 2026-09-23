@@ -33,3 +33,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# keep the template, ignore real env files
+!.env.example
