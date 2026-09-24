@@ -1,5 +1,6 @@
 package com.foodcal.foodcal_backend.security;
 
+import com.foodcal.foodcal_backend.exception.InvalidTokenException;
 import com.foodcal.foodcal_backend.dto.RefreshTokenResponse;
 import com.foodcal.foodcal_backend.entity.UserDetail;
 import com.foodcal.foodcal_backend.repository.UserDetailRepository;
@@ -146,7 +147,7 @@ public class JwtUtil {
             return response;
 
         } catch (Exception e) {
-            throw new RuntimeException("Invalid or expired refresh token");
+            throw new InvalidTokenException("Invalid or expired refresh token");
         }
     }
 }
